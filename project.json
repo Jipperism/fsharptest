@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "debugType": "portable",
+    "emitEntryPoint": true,
+    "compilerName": "fsc",
+    "compile": {
+      "includeFiles": [
+        "Controllers/TestController.fs",
+        "Program.fs"
+      ]
+    }
+  },
+  "dependencies": {
+    "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-161111",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.1.0-preview1-final",
+    "Microsoft.AspNetCore.Mvc": "1.1.0-preview1-final",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0-preview1-final"
+  },
+
+  "tools": {
+    "dotnet-compile-fsc": "1.0.0-preview2.1-*",
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview1-final"
+  },
+  "frameworks": {
+    "netcoreapp1.1": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.1.0"
+        },
+        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-161111"
+      }
+    }
+  }
+}

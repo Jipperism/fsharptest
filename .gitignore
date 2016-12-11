@@ -1,0 +1,8 @@
+.DS_store
+obj/
+bin/
+
+*.dll
+*.pdb
+*.lock.json
+.vscode/
