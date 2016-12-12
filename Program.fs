@@ -7,6 +7,8 @@ open Microsoft.AspNetCore.Http
 open Microsoft.AspNetCore.Routing
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
+open Microsoft.EntityFrameworkCore
+open DotnetTest.DatabaseContext
 
 type Startup() =
     member this.Configure(app:IApplicationBuilder) = 
@@ -19,7 +21,10 @@ type Startup() =
         ()
 
     member this.ConfigureServices(services:IServiceCollection) =
-        let services = services.AddMvc()
+        services.AddMvc() |> ignore
+        let connectionString = "Server=(localdb)\\mssqllocaldb;Database=fsharptest;Trusted_Connection=True;MultipleActiveResultSets=true" 
+        services.AddDbContext<DatabaseContext>(fun options -> options.UseSqlServer(connectionString)|> ignore) |> ignore
+        
         ()
 
 [<EntryPoint>]
