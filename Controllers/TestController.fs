@@ -3,7 +3,7 @@ namespace Controllers
 open Microsoft.AspNetCore.Mvc
 open Microsoft.AspNetCore.Routing
 
-type TestController() = 
+type TestController() =
     inherit Controller()
 
     [<HttpGet>]
